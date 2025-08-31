@@ -1,8 +1,14 @@
-
 import { GoogleGenAI, Modality } from "@google/genai";
 import { UploadedFile, GeneratedImage } from '../types';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// IMPORTANT: Use Vite's syntax for environment variables
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
+if (!apiKey) {
+  throw new Error("VITE_GEMINI_API_KEY is not set. Please add it to your environment.");
+}
+
+const ai = new GoogleGenAI({ apiKey: apiKey });
 
 const getPrompt = (mockupType: string, isVariation: boolean): string => {
     if (isVariation) {
