@@ -1,0 +1,5 @@
+{
+  "name": "AI Mockup Generator",
+  "description": "A simple web app for designers to create professional, photorealistic mockups of their uploaded designs using AI. Supports various categories like apparel, print, and digital devices.",
+  "requestFramePermissions": []
+}
